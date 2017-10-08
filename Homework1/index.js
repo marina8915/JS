@@ -21,11 +21,15 @@ function inputArray() {
         }
     }
     //Max
-    var Max = 0;
+    var Max = -1/0; //-infinity
     for (var i = 0; i < array.length; i++) {
         if (typeof(array[i]) === "number") {
             if (Max < array[i]) Max = array[i];
         }
+    }
+    //check if in array is no numbers Max = undefined
+    if (Max == -Infinity) {
+        Max = undefined;
     }
     //Min
     var Min = 1 / 0; //infinity
@@ -34,6 +38,10 @@ function inputArray() {
             if (Min > array[i]) Min = array[i];
         }
     }
+    //check if in array is no numbers Min = undefined
+    if (Min == Infinity) {
+        Min = undefined;
+    }
     //output Array, Sum, Max, Min
-    document.getElementById('result').innerHTML = ('Array: ' + array + '\n Sum = ' + Sum + '\n Max= ' + Max + '\n Min= ' + Min);
+    document.getElementById('result').innerHTML = ('Array: ' + array + '\n Sum = ' + Sum + '\n Max = ' + Max + '\n Min = ' + Min);
 }
