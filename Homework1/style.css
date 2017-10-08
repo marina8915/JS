@@ -1,0 +1,12 @@
+/* CSS Document */
+body {
+    width: 960px;
+    margin: 20px auto;
+	  padding: 20px;
+}
+output {
+    white-space: pre-line;
+}
+form{
+    margin-bottom: 20px;
+}
