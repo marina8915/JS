@@ -8,26 +8,15 @@ function inputArray() {
             array.push(array1[i]);
         }
     }
-    //Sum
     var Sum = 0;
+	var Max = null;
+	var Min = null;
     for (var i = 0; i < array.length; i++) {
         array[i] = +array[i]; //transform into numbers
         if (!isNaN(array[i])) {
             Sum = Sum + array[i];
-        }
-    }
-    //Max
-    var Max = null;
-    for (var i = 0; i < array.length; i++) {
-        if (typeof(array[i]) === "number") {
-            if (Max < array[i]) Max = array[i];
-        }
-    }
-    //Min
-    var Min = null;
-    for (var i = 0; i < array.length; i++) {
-        if (typeof(array[i]) === "number") {
-            if (Min > array[i]) Min = array[i];
+			if (Max < array[i]) Max = array[i]; 
+			if (Min > array[i]) Min = array[i];
         }
     }
     //output Array, Sum, Max, Min
