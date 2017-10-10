@@ -1,15 +1,11 @@
 // JavaScript Document
 function inputArray() {
-    var array = document.getElementById("array").value;  //read input
-    array = array.split(','); //transform into an array
+    var array1 = [1,NaN,3,5,-3, ,];
     //delete empty element
-    for (var i = 0; i < array.length; i++) {
-        if (array[i] == 0) {
-            if (array[i] === 0) {
-            } else {
-                array.splice(i, 1);
-                i--;
-            }
+    var array = [];
+    for (var i = 0; i < array1.length; i++) {
+        if (i in array1) {
+            array.push(array1[i]);
         }
     }
     //Sum
@@ -21,7 +17,7 @@ function inputArray() {
         }
     }
     //Max
-    var Max = null; 
+    var Max = null;
     for (var i = 0; i < array.length; i++) {
         if (typeof(array[i]) === "number") {
             if (Max < array[i]) Max = array[i];
