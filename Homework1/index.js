@@ -7,7 +7,6 @@ function inputArray() {
     for (var i = 0; i < array.length; i++) {
         if (i in array) { //rejection empty element
             array[i] = +array[i]; //transform into numbers
-
             if (!isNaN(array[i])) {
                 Sum = Sum + array[i];
                 if (Max < array[i]) Max = array[i];
