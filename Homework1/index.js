@@ -4,7 +4,6 @@ function inputArray() {
     var Sum = 0;
     //conferment Min, Max
     for (var i = 0; i < array.length; i++) {
-        console.log(typeof(array[i]));
         if (typeof(array[i]) === "number" & !isNaN(array[i])) {
             var Max = array[i];
             var Min = array[i];
