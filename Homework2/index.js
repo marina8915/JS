@@ -1,6 +1,6 @@
 var array = [2, 1, 5, 0, 3, 4, 7, 2, 3, 1, 0];
-var max = array[0];
-var maxIndex = 0;
+var max = -999;
+var maxIndex = 999;
 var water = 0;
 
 while (!(array[maxIndex] === 0)) {
