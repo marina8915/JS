@@ -1,8 +1,8 @@
 var array = [2, 1, 5, 0, 3, 4, 7, 2, 3, 1, 0];
 var water = 0;
-var sum = 100;
+var sum;
 
-while (sum > 0) {
+do {
     //find element = 0
     array.forEach(function (el, index) {
         var biggerLeft;
@@ -30,6 +30,6 @@ while (sum > 0) {
     sum = array.reduce(function (sum, el) {
         return sum + el;
     }, 0);
-}
+} while (sum > 0);
 
 alert(water);
