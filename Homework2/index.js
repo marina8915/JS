@@ -27,9 +27,9 @@ while (sum > 0) {
         return el;
     });
     //find sum of elements
-    sum = array.reduce(function (sum,el) {
+    sum = array.reduce(function (sum, el) {
         return sum + el;
-    },0);
+    }, 0);
 }
 
 alert(water);
