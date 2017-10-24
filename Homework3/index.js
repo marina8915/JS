@@ -26,6 +26,7 @@ var arr = array.myMap(function (el) {
 
 //mySort
 Array.prototype.mySort = function (myCellback) {
+    var myCellback = function () {}
     var Sort = []
     var Max
     var length = this.length
@@ -44,8 +45,6 @@ Array.prototype.mySort = function (myCellback) {
 var sort = array.mySort(function (prev, next) {
     return prev > next
 })
-var sortStr = str.mySort(function (prev, next) {
-    return prev < next
-})
+var sortStr = str.mySort()
 console.log(sort)
 console.log(sortStr)
