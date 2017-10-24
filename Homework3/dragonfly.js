@@ -36,7 +36,7 @@ function Dragonfly() {
         })
         if (appetite === 100) {
             console.log('Thank you, I don`t want to eat')
-        }else{
+        } else {
             if (provender) {
                 console.log('Yummy')
                 appetite += 20
@@ -91,13 +91,14 @@ function Dragonfly() {
         }
         life()
     }
-    function life () {
+
+    function life() {
         if (health <= 0) die()
         if (humor <= 0 || appetite <= 0 || thirst <= 0 || cleanliness <= 0) {
             health -= 50
             humor -= 50
         }
-        if(appetite < 100) {
+        if (appetite < 100) {
             console.log("Please, give me the feed")
             ignorEat++
         }
@@ -106,7 +107,7 @@ function Dragonfly() {
             humor -= 20
             appetite -= 10
         }
-        if(thirst < 100) {
+        if (thirst < 100) {
             console.log("Please, give me the water")
             ignoreDrink++
         }
@@ -129,10 +130,12 @@ function Dragonfly() {
         }
         if (health < 20) setTimeout(die, 20000)
     }
+
     function die() {
         console.log('Farewell :(')
         dragon = null
     }
+
     this.info = function () {
         console.table([
             ['health', health],
