@@ -1,15 +1,14 @@
-var array = [1, 3]
+var array = [1, 210, 100]
+var str = ["white", "red", "black"]
 
 //myForEach
 Array.prototype.myForEach = function (myCell) {
     for (var i = 0; i < this.length; i++) {
         myCell(this[i], i, this)
     }
-
 }
 array.myForEach(function (el) {
     //console.log(el+10)
-
 })
 
 //myMap
@@ -23,5 +22,31 @@ Array.prototype.myMap = function (myCell) {
 var arr = array.myMap(function (el) {
     return el + 10
 })
+//console.log(arr)
 
-console.log(arr)
+//mySort
+Array.prototype.mySort = function (myCell) {
+    var Sort = []
+    var Max
+    var length = this.length
+    for (var c = 0; c < length; c++) {
+        for (var i = 0; i < length - 1; i++) {
+            if (myCell(this[c], this[c + 1])) {
+                Max = this[c]
+                this[c] = this[c + 1]
+                this[c + 1] = Max
+            }
+        }
+        Sort[c] = this[c]
+    }
+
+    return Sort
+}
+var sort = array.mySort(function (prev, next) {
+    return prev > next
+})
+var sortStr = str.mySort(function (prev, next) {
+    return prev < next
+})
+console.log(sort)
+console.log(sortStr)
