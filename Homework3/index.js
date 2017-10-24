@@ -2,9 +2,9 @@ var array = [1, 210, 100]
 var str = ["white", "red", "black"]
 
 //myForEach
-Array.prototype.myForEach = function (myCell) {
+Array.prototype.myForEach = function (myCellback) {
     for (var i = 0; i < this.length; i++) {
-        myCell(this[i], i, this)
+        myCellback(this[i], i, this)
     }
 }
 array.myForEach(function (el) {
@@ -12,10 +12,10 @@ array.myForEach(function (el) {
 })
 
 //myMap
-Array.prototype.myMap = function (myCell) {
+Array.prototype.myMap = function (myCellback) {
     var Map = []
     for (var i = 0; i < this.length; i++) {
-        Map[i] = myCell(this[i])
+        Map[i] = myCellback(this[i])
     }
     return Map
 }
@@ -25,13 +25,13 @@ var arr = array.myMap(function (el) {
 //console.log(arr)
 
 //mySort
-Array.prototype.mySort = function (myCell) {
+Array.prototype.mySort = function (myCellback) {
     var Sort = []
     var Max
     var length = this.length
     for (var c = 0; c < length; c++) {
         for (var i = 0; i < length - 1; i++) {
-            if (myCell(this[c], this[c + 1])) {
+            if (myCellback(this[c], this[c + 1])) {
                 Max = this[c]
                 this[c] = this[c + 1]
                 this[c + 1] = Max
@@ -39,7 +39,6 @@ Array.prototype.mySort = function (myCell) {
         }
         Sort[c] = this[c]
     }
-
     return Sort
 }
 var sort = array.mySort(function (prev, next) {
