@@ -96,7 +96,6 @@ function Dragonfly() {
     }
 
     function life() {
-        if (health <= 0) die()
         if (humor <= 0 || appetite <= 0 || thirst <= 0 || cleanliness <= 0) {
             health -= 50
             humor -= 50
@@ -131,7 +130,12 @@ function Dragonfly() {
             console.log("I want to study")
             ignoreStudy++
         }
-        if (health < 20) setTimeout(die, 20000)
+        if (health < 20) {
+            setTimeout(die, 20000)
+        }
+        if (health <= 0) {
+            die()
+        }
         Check()
     }
     function Check() {
