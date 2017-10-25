@@ -9,6 +9,9 @@ function Dragonfly() {
     var ignoreDrink = 0
     var ignoreStudy = 0
     var ignoreWash = 0
+    var maxLimit = 200
+    var minLimit = 0
+    var parameters = [appetite, health, humor, thirst, cleanliness, education]
 
     var create
     var eat
@@ -129,6 +132,13 @@ function Dragonfly() {
             ignoreStudy++
         }
         if (health < 20) setTimeout(die, 20000)
+        Check()
+    }
+    function Check() {
+        parameters.forEach(function (el) {
+            if (el > maxLimit) return el = maxLimit
+            if (el < minLimit) return el = minLimit
+        })
     }
 
     function die() {
