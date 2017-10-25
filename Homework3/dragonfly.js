@@ -11,7 +11,14 @@ function Dragonfly() {
     var ignoreWash = 0
     var maxLimit = 200
     var minLimit = 0
-    var parameters = [appetite, health, humor, thirst, cleanliness, education]
+    var dragonParameters = {
+        appetite:this.appetite,
+        health:this.health,
+        humor:this.humor,
+        thirst:this.thirst,
+        cleanliness:this.cleanliness,
+        education:this.education
+    }
 
     var create
     var eat
@@ -136,10 +143,10 @@ function Dragonfly() {
     }
 
     function Check() {
-        parameters.forEach(function (el) {
-            if (el > maxLimit) return el = maxLimit
-            if (el < minLimit) return el = minLimit
-        })
+        for(var key in dragonParameters) {
+            if (dragonParameters[key] > maxLimit) return  dragonParameters[key] = maxLimit
+            if (dragonParameters[key] < minLimit) return dragonParameters[key] = minLimit
+        }
     }
 
     function die() {
