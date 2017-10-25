@@ -130,14 +130,11 @@ function Dragonfly() {
             console.log("I want to study")
             ignoreStudy++
         }
-        if (health < 20) {
-            setTimeout(die, 20000)
-        }
-        if (health <= 0) {
-            die()
-        }
+        if (health < 20) setTimeout(die, 20000)
+        if (health <= 0) die()
         Check()
     }
+
     function Check() {
         parameters.forEach(function (el) {
             if (el > maxLimit) return el = maxLimit
