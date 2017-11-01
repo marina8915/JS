@@ -31,7 +31,7 @@ function Dragonfly() {
         var provender = feed.find(function (el) {
             return el === food
         })
-        if (dragonParameters.appetite === 100) {
+        if (dragonParameters.appetite >= 100) {
             console.log('Thank you, I don`t want to eat')
         } else {
             if (provender) {
@@ -48,25 +48,32 @@ function Dragonfly() {
         life()
     }
     this.drink = function () {
-        if (dragonParameters.thirst === 100) console.log('Thank you, I don`t want to drink')
-        console.log('Thank you')
-        dragonParameters.thirst += 20
-        dragonParameters.humor += 10
-        dragonParameters.health += 10
-        dragonParameters.cleanliness -= 10
-        ignoreDrink = 0
+        if (dragonParameters.thirst >= 100) {
+            console.log('Thank you, I don`t want to drink')
+        } else {
+            console.log('Thank you')
+            dragonParameters.thirst += 20
+            dragonParameters.humor += 10
+            dragonParameters.health += 10
+            dragonParameters.cleanliness -= 10
+            ignoreDrink = 0
+        }
         life()
     }
     this.lesson = function () {
-        console.log('I like to fly')
-        dragonParameters.education += 10
-        dragonParameters.appetite -= 20
-        dragonParameters.health += 30
-        dragonParameters.cleanliness -= 20
-        dragonParameters.humor += 20
-        ignoreStudy = 0
-        console.log('I want to wash')
-        ignoreWash++
+        if (dragonParameters.thirst >= 200) {
+            console.log('Thank you, I don`t want to fly')
+        } else {
+            console.log('I like to fly')
+            dragonParameters.education += 10
+            dragonParameters.appetite -= 20
+            dragonParameters.health += 30
+            dragonParameters.cleanliness -= 20
+            dragonParameters.humor += 20
+            ignoreStudy = 0
+            console.log('I want to wash')
+            ignoreWash++
+        }
         if (ignoreWash > 2) {
             dragonParameters.health -= 10
             dragonParameters.humor -= 50
@@ -75,7 +82,7 @@ function Dragonfly() {
         life()
     }
     this.wash = function () {
-        if (dragonParameters.thirst === 100) {
+        if (dragonParameters.thirst >= 100) {
             console.log('Thank you, I don`t want to wash')
         } else {
             console.log('Thank you')
