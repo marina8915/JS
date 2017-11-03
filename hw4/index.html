@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+    <title>Science Lab</title>
+    <link rel="stylesheet" type="text/css" href="styles/styles.css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+<div id="wrapper">
+    <header>
+        <div class="logo"><a href="#">Science <span>Lab</span></a></div>
+        <nav>
+            <div class="icon_menu js_menu">Menu</div>
+            <ul class="menu">
+                <li><a href="#">home</a></li>
+                <li><a href="#">about us</a></li>
+                <li><a href="#">researchers</a></li>
+                <li><a href="#">services</a></li>
+                <li><a href="#">contacts</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="welcome">
+            <h1><a href="#">Welcome to our <span>Lab</span></a></h1>
+            <p><a href="#">Ea consetetur sadi consetetur</a>
+                consetetur pscing elitr, sed diam lorem nonumy eirmod Erat, sed diam voluptua.
+                Dolores et ea consetetur sadi pscing elitrn onumy eirmod Erat, sed diam voluptua.
+                Dolores et ea consetetur sadi pscing elitrn onumy eirmod Erat, sed diam voluptua.
+            </p>
+            <a href="#" class="more">more</a>
+        </div>
+        <div class="left">
+            <h2><a href="#">About our Lab</a></h2>
+            <p><a href="#">Ea consetetur sadi consetetur</a>
+                consetetur pscing elitr, sed diam lorem nonumy eirmod</p>
+            <p>Erat, sed diam voluptua. Dolores et ea consetetur sadi pscing elitrn onumy eirmod</p>
+            <p>Erat, sed diam voluptua. Dolores et ea consetetur sadi pscing elitrn onumy eirmod Erat, sed diam
+                voluptua. Erat, sed diam voluptua. Dolores et ea consetetur sadi pscing elitrn onumy eirmod
+            </p>
+            <a href="#" class="more">more</a>
+        </div>
+        <div class="right">
+            <div class="news">
+                <div class="img"><img src="images/news1.jpg" alt="Researchers" width="141" height="91"/></div>
+                <div class="info">
+                    <h2><a href="#">Researchers</a></h2>
+                    <p><a href="#">Ea consetetur sadi consetetur</a>
+                        consetetur pscing elitr, sed diam lorem nonumy eirmod Erat, sed diam voluptua.
+                        Dolores et ea consetetur sadi pscing elitrn onumy eirmod
+                    </p>
+                </div>
+            </div>
+            <div class="news">
+                <div class="img"><img src="images/news2.jpg" alt="Services" width="141" height="91"/></div>
+                <div class="info">
+                    <h2><a href="#">Services</a></h2>
+                    <p><a href="#">Lorem sadi consetetur</a>
+                        consetetur pscing elitr, sed diam lorem nonumy eirmod Erat, sed diam voluptua.
+                        Dolores et ea consetetur sadi pscing elitrn onumy eirmod
+                    </p>
+                </div>
+            </div>
+        </div>
+    </main>
+    <div class="footer" >
+        <p>Copyright &#169; Your Company Name</p>
+    </div>
+</div>
+<script src="script/jquery.js"></script>
+<script type="text/javascript">
+    jQuery(document).ready( function ($) {
+        $('.js_menu').on('click', function () {
+            $(this).next('ul').slideToggle();
+
+        });
+    });
+</script>
+</body>
+</html>
