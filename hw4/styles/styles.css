@@ -185,7 +185,7 @@ header .menu {
 header .menu li {
     font-size: 20px;
     float: left;
-    padding: 28px 38px 30px 35px;
+    padding: 28px 30px 30px 30px;
     background: url(../images/menu.png) no-repeat 100% 50%;
 }
 
