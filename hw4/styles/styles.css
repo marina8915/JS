@@ -185,7 +185,7 @@ header .menu {
 header .menu li {
     font-size: 20px;
     float: left;
-    padding: 28px 35px 30px 30px;
+    padding: 28px 38px 30px 35px;
     background: url(../images/menu.png) no-repeat 100% 50%;
 }
 
@@ -230,7 +230,7 @@ main {
 .welcome h1 {
     margin-left: -45px;
     padding-top: 35px;
-    margin-bottom: 25px;
+    margin-bottom: 22px;
     line-height: 1.2em;
 }
 
@@ -243,11 +243,6 @@ main {
 
 .welcome h1 a span {
     font-family: 'Conv_HelveticaNeueLTPro-BdEx', 'Myriad Pro', PT Sans, serif;
-}
-
-.welcome p {
-    line-height: 1.4em;
-    font-family: Tahoma, Arial;
 }
 
 main .more {
@@ -275,7 +270,7 @@ main p {
 }
 
 .left {
-    padding: 16px 25px;
+    padding: 20px 25px;
     width: 210px;
     float: left;
     clear: both;
@@ -319,8 +314,7 @@ main .left h2 a, main .right h2 a {
 
 .right .news {
     background: url("../images/line_h.jpg") no-repeat bottom center;
-    padding-bottom: 20px;
-    padding-top: 16px;
+    padding: 18px 0 20px 20px;
 }
 
 .right .news:last-child {
