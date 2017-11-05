@@ -205,13 +205,12 @@ header .menu li a {
 header nav .icon_menu {
     display: none;
     cursor: pointer;
-    color: #fff;
+    color: #000;
     text-transform: uppercase;
     font-size: 16px;
     padding-left: 35px;
     background: url(../images/menu_icon.svg) no-repeat left center;
     background-size: 24px 24px;
-    text-align: right;
 }
 
 /* CONTENT */
@@ -225,9 +224,12 @@ main {
     height: 191px;
     padding-left: 20px;
     padding-right: 35px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
-.welcome img{
+.welcome .img{
     float: left;
 }
 .welcome h1 {
@@ -235,9 +237,8 @@ main {
     margin-bottom: 20px;
     font-family: 'Conv_HelveticaNeueLTPro-ThEx', 'Myriad Pro', PT Sans, serif;
     font-size: 32px;
-    display: inline-flex;
+    display: inline-block;
     margin-left: -50px;
-
 }
 
 .welcome h1 a {
@@ -253,9 +254,8 @@ main .more {
     background: url("../images/arrow.png") no-repeat;
     height: 5px;
     width: 9px;
-    text-indent: -2000px;
     margin-top: 14px;
-    display: inline-flex;
+    display: inline-block;
     margin-left: 5px;
 }
 
@@ -363,9 +363,10 @@ main .left h2 a, main .right h2 a{
     .welcome {
         height: auto;
         padding: 20px;
+        flex-direction: column;
     }
 
-    .welcome img{
+    .welcome .img{
         margin-bottom: 20px;
     }
 
