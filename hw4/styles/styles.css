@@ -221,24 +221,28 @@ main {
 }
 
 .welcome {
-    background: url("../images/lab.png") 5% no-repeat #EEEEFB;
+    background: #EEEEFB;
     height: 191px;
-    padding-left: 316px;
+    padding-left: 20px;
     padding-right: 35px;
 }
 
+.welcome img{
+    float: left;
+}
 .welcome h1 {
-    margin-left: -45px;
-    padding-top: 35px;
-    margin-bottom: 22px;
-    line-height: 1.2em;
+    padding-top: 25px;
+    margin-bottom: 20px;
+    font-family: 'Conv_HelveticaNeueLTPro-ThEx', 'Myriad Pro', PT Sans, serif;
+    font-size: 32px;
+    display: inline-flex;
+    margin-left: -50px;
+
 }
 
 .welcome h1 a {
-    color: #093500;
     display: block;
-    font-family: 'Conv_HelveticaNeueLTPro-ThEx', 'Myriad Pro', PT Sans, serif;
-    font-size: 32px;
+    color: #093500;
 }
 
 .welcome h1 a span {
@@ -251,7 +255,7 @@ main .more {
     width: 9px;
     text-indent: -2000px;
     margin-top: 14px;
-    display: block;
+    display: inline-flex;
     margin-left: 5px;
 }
 
@@ -283,15 +287,17 @@ main p {
     padding-left: 2px;
 }
 
-main .left h2 a, main .right h2 a {
-    color: #093500;
+main .left h2, main .right h2 {
     font-size: 20px;
-    display: block;
     padding-bottom: 18px;
     line-height: 1em;
     font-weight: normal;
 }
 
+main .left h2 a, main .right h2 a{
+    display: block;
+    color: #093500;
+}
 .right {
     padding-left: 0;
     float: left;
@@ -304,7 +310,7 @@ main .left h2 a, main .right h2 a {
     height: 91px;
     display: inline-block;
 }
-.right img{
+.right img, .welcome{
     object-fit: cover;
 }
 .right .info {
@@ -338,7 +344,6 @@ main .left h2 a, main .right h2 a {
 @media screen and (max-width: 700px){
     #wrapper {
         width: auto;
-        padding: 0 20px;
         box-sizing: border-box;
     }
     header nav .icon_menu {
@@ -349,23 +354,31 @@ main .left h2 a, main .right h2 a {
     }
     .left{
         background: none;
-        width: 100%;
-        padding-left: 0px;
+        width: 90%;
     }
+    .right{
+        width: auto;
+    }
+
     .welcome {
         height: auto;
         padding: 20px;
-        background: url(../images/lab.png) top no-repeat #EEEEFB;
     }
+
+    .welcome img{
+        margin-bottom: 20px;
+    }
+
     .welcome h1 {
         margin-left: 0;
-        padding-top: 191px;
+        padding-top: 0;
+        font-size: 25px;
     }
     header, header .menu{
         height: auto;
     }
     header nav{
-        padding: 20px 0;
+        padding: 20px 0 20px 20px;
     }
     header .menu{
         padding-top: 10px;
