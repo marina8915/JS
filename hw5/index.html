@@ -1,15 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
     <title>Geekhub list</title>
     <script src="index.js"></script>
 </head>
-<body>
+<body onload="onLoadFunct()">
 <form>
     <input type="text" id="todo"/>
-    <input type="button" value="Зберегти" onclick="Click()" id="submit">
+    <input type="button" value="Зберегти" id="submit">
     <ul id="list"></ul>
+    <input id="checked" type="button" value="Checked">
+    <ul id="select"></ul>
+    <input id="unchecked"type="button" value="Unchecked">
 </form>
 </body>
 </html>
