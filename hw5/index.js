@@ -1,6 +1,5 @@
 function onLoadFunct() {
 
-    //bag !!reset
     var click = document.getElementById('submit')
     var n = 0
     if (click) {
@@ -11,9 +10,10 @@ function onLoadFunct() {
             el.id = n
             el.innerHTML = '<input type="checkbox" id="check' + n + '">' + document.getElementById("todo").value
             list.insertBefore(el, list.childNodes[0])
+            document.getElementById("todo").value = ""
         }, false)
     }
-    
+
     //bag not new list
     var checked = document.getElementById('checked')
     if (checked) {
@@ -24,15 +24,15 @@ function onLoadFunct() {
                 for (var i = 0; i < elems.length; i++) {
                     var idLi = elems[i].getAttribute('id')
                     var idCheck = "check" + idLi
-                    var el = document.getElementById(idCheck)
-                    if (el.checked) {
+                    var li = document.getElementById(idCheck)
+                    if (li.checked) {
                         document.getElementById("select").appendChild(elems[i])
                     }
                 }
             }, false)
         })
     }
-    
+
     //bag not new list
     var unchecked = document.getElementById('unchecked')
     if (unchecked) {
@@ -43,8 +43,8 @@ function onLoadFunct() {
                 for (var i = 0; i < unElems.length; i++) {
                     var idLi = unElems[i].getAttribute('id')
                     var idCheck = "check" + idLi
-                    var el = document.getElementById(idCheck)
-                    if (el.checked == false) {
+                    var li = document.getElementById(idCheck)
+                    if (li.checked === false) {
                         document.getElementById("unselect").appendChild(unElems[i])
                     }
                 }
