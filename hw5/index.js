@@ -8,8 +8,11 @@ function onLoadFunct() {
             n += 1
             var el = document.createElement("li")
             el.id = n
-            el.innerHTML = '<input type="checkbox" id="check' + n + '">' + document.getElementById("todo").value
-            list.insertBefore(el, list.childNodes[0])
+            var value = -document.getElementById("todo").value
+            if (value !== -0){
+                el.innerHTML = '<input type="checkbox" id="check' + n + '">' + document.getElementById("todo").value
+                list.insertBefore(el, list.childNodes[0])
+            }
             document.getElementById("todo").value = ""
         }, false)
     }
