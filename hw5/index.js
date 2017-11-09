@@ -18,22 +18,18 @@ function onLoadFunct() {
     if (all) {
         all.addEventListener('click', function (event) {
             event.stopPropagation()
-            Array.prototype.forEach.call(document.getElementsByTagName("li"), function (el) {
-                var elems = document.getElementById('select').getElementsByTagName('li')
-                for (var i = 0; i < elems.length; i++) {
-                    document.getElementById("list").appendChild(elems[i])
+            Array.prototype.forEach.call(document.getElementsByTagName("li"), function () {
+                el = document.getElementById('select').getElementsByTagName('li')
+                for (var i = 0; i < el.length; i++) {
+                    document.getElementById("list").appendChild(el[i])
                 }
-            }, false)
-            Array.prototype.forEach.call(document.getElementsByTagName("li"), function (el) {
-                var elems = document.getElementById('unselect').getElementsByTagName('li')
-                for (var i = 0; i < elems.length; i++) {
-                    document.getElementById("list").appendChild(elems[i])
+                el = document.getElementById('unselect').getElementsByTagName('li')
+                for ( i = 0; i < el.length; i++) {
+                    document.getElementById("list").appendChild(el[i])
                 }
-            }, false)
-            Array.prototype.forEach.call(document.getElementsByTagName("li"), function (el) {
-                var elems = document.getElementById('list').getElementsByTagName('li')
-                for (var i = 0; i < elems.length; i++) {
-                    document.getElementById("list").appendChild(elems[i])
+                el = document.getElementById('list').getElementsByTagName('li')
+                for (i = 0; i < el.length; i++) {
+                    document.getElementById("list").appendChild(el[i])
                 }
             }, false)
         })
@@ -42,23 +38,23 @@ function onLoadFunct() {
     if (checked) {
         checked.addEventListener('click', function (event) {
             event.stopPropagation()
-            Array.prototype.forEach.call(document.getElementsByTagName("li"), function (li) {
-                var elems = document.getElementById('list').getElementsByTagName('li')
-                for (var i = 0; i < elems.length; i++) {
-                    var idLi = elems[i].getAttribute('id')
+            Array.prototype.forEach.call(document.getElementsByTagName("li"), function () {
+                el = document.getElementById('list').getElementsByTagName('li')
+                for (i = 0; i < el.length; i++) {
+                    var idLi = el[i].getAttribute('id')
                     var idCheck = "check" + idLi
                     var li = document.getElementById(idCheck)
                     if (li.checked) {
-                        document.getElementById("select").appendChild(elems[i])
+                        document.getElementById("select").appendChild(el[i])
                     }
                 }
-            var elems = document.getElementById('unselect').getElementsByTagName('li')
-            for (var i = 0; i < elems.length; i++) {
-                var idLi = elems[i].getAttribute('id')
-                var idCheck = "check" + idLi
-                var li = document.getElementById(idCheck)
+            el = document.getElementById('unselect').getElementsByTagName('li')
+            for (i = 0; i < el.length; i++) {
+                idLi = el[i].getAttribute('id')
+                idCheck = "check" + idLi
+                li = document.getElementById(idCheck)
                 if (li.checked) {
-                    document.getElementById("select").appendChild(elems[i])
+                    document.getElementById("select").appendChild(el[i])
                 }
             }
         }, false)
@@ -69,21 +65,21 @@ function onLoadFunct() {
     if (unchecked) {
         unchecked.addEventListener('click', function (event) {
             event.stopPropagation()
-            Array.prototype.forEach.call(document.getElementsByTagName("li"), function (li) {
+            Array.prototype.forEach.call(document.getElementsByTagName("li"), function () {
                 var unElems = document.getElementById('list').getElementsByTagName('li')
-                for (var i = 0; i < unElems.length; i++) {
-                    var idLi = unElems[i].getAttribute('id')
-                    var idCheck = "check" + idLi
-                    var li = document.getElementById(idCheck)
+                for (i = 0; i < unElems.length; i++) {
+                    idLi = unElems[i].getAttribute('id')
+                    idCheck = "check" + idLi
+                    li = document.getElementById(idCheck)
                     if (li.checked === false) {
                         document.getElementById("unselect").appendChild(unElems[i])
                     }
                 }
-            var unElems = document.getElementById('select').getElementsByTagName('li')
-            for (var i = 0; i < unElems.length; i++) {
-                var idLi = unElems[i].getAttribute('id')
-                var idCheck = "check" + idLi
-                var li = document.getElementById(idCheck)
+            unElems = document.getElementById('select').getElementsByTagName('li')
+            for (i = 0; i < unElems.length; i++) {
+                idLi = unElems[i].getAttribute('id')
+                idCheck = "check" + idLi
+                li = document.getElementById(idCheck)
                 if (li.checked === false) {
                     document.getElementById("unselect").appendChild(unElems[i])
                 }
