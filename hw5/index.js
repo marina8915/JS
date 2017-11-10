@@ -26,7 +26,6 @@ function onLoadFunct() {
             }
             document.getElementById('sum').innerHTML = 'number of items ' + item
         }, false)
-
     }
     //event for button all
     var all = document.getElementById('all')
@@ -34,16 +33,8 @@ function onLoadFunct() {
         all.addEventListener('click', function (event) {
             event.stopPropagation()
             Array.prototype.forEach.call(document.getElementsByTagName("li"), function () {
-                el = document.getElementById('select').getElementsByTagName('li')
+                el = document.getElementsByTagName('li')
                 for (var i = 0; i < el.length; i++) {
-                    document.getElementById("list").appendChild(el[i])
-                }
-                el = document.getElementById('unselect').getElementsByTagName('li')
-                for (i = 0; i < el.length; i++) {
-                    document.getElementById("list").appendChild(el[i])
-                }
-                el = document.getElementById('list').getElementsByTagName('li')
-                for (i = 0; i < el.length; i++) {
                     document.getElementById("list").appendChild(el[i])
                 }
             }, false)
@@ -58,7 +49,6 @@ function onLoadFunct() {
             }
             document.getElementById('sum').innerHTML = 'number of items ' + item
         })
-
     }
     //event for button checked
     var checked = document.getElementById('checked')
@@ -66,8 +56,8 @@ function onLoadFunct() {
         checked.addEventListener('click', function (event) {
             event.stopPropagation()
             Array.prototype.forEach.call(document.getElementsByTagName("li"), function () {
-                //find selected element in list
-                el = document.getElementById('list').getElementsByTagName('li')
+                //find selected element
+                el = document.getElementsByTagName('li')
                 for (i = 0; i < el.length; i++) {
                     var idLi = el[i].getAttribute('id')
                     var idCheck = "check" + idLi
@@ -76,17 +66,7 @@ function onLoadFunct() {
                         document.getElementById("select").appendChild(el[i])
                     }
                 }
-                //find selected element in unselect
-                el = document.getElementById('unselect').getElementsByTagName('li')
-                for (i = 0; i < el.length; i++) {
-                    idLi = el[i].getAttribute('id')
-                    idCheck = "check" + idLi
-                    li = document.getElementById(idCheck)
-                    if (li.checked) {
-                        document.getElementById("select").appendChild(el[i])
-                    }
-                }
-                //find selected element in select
+                //find unselected element in select
                 el = document.getElementById('select').getElementsByTagName('li')
                 for (i = 0; i < el.length; i++) {
                     idLi = el[i].getAttribute('id')
@@ -115,8 +95,8 @@ function onLoadFunct() {
         unchecked.addEventListener('click', function (event) {
             event.stopPropagation()
             Array.prototype.forEach.call(document.getElementsByTagName("li"), function () {
-                //find unselected element in list
-                el = document.getElementById('list').getElementsByTagName('li')
+                //find unselected element
+                el = document.getElementsByTagName('li')
                 for (i = 0; i < el.length; i++) {
                     idLi = el[i].getAttribute('id')
                     idCheck = "check" + idLi
@@ -125,17 +105,7 @@ function onLoadFunct() {
                         document.getElementById("unselect").appendChild(el[i])
                     }
                 }
-                //find unselected element in select
-                el = document.getElementById('select').getElementsByTagName('li')
-                for (i = 0; i < el.length; i++) {
-                    idLi = el[i].getAttribute('id')
-                    idCheck = "check" + idLi
-                    li = document.getElementById(idCheck)
-                    if (li.checked === false) {
-                        document.getElementById("unselect").appendChild(el[i])
-                    }
-                }
-                //find unselected element in unselect
+                //find selected element in unselect
                 el = document.getElementById('unselect').getElementsByTagName('li')
                 for (i = 0; i < el.length; i++) {
                     idLi = el[i].getAttribute('id')
@@ -159,7 +129,6 @@ function onLoadFunct() {
         })
     }
 }
-
 //delete item
 function Del(id) {
     var el = document.getElementById(id)
