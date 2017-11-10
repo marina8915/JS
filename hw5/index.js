@@ -9,7 +9,7 @@ function onLoadFunct() {
             //create item in list
             var el = document.createElement("li")
             el.id = n
-            var del = '<p onclick="Del(' + n + ')">delete</p>'
+            var del = '<i class="del" onclick="Del(' + n + ')"></i>'
             //check if input empty -> ignore
             var value = -document.getElementById("item").value
             if (value !== -0) {
@@ -18,10 +18,15 @@ function onLoadFunct() {
             }
             //reset input
             document.getElementById("item").value = ""
+            // number of items
+            var sum = document.getElementById('list').getElementsByTagName('li')
+            var item = 0
+            for (i = 0; i < sum.length; i++) {
+                item += 1
+            }
+            document.getElementById('sum').innerHTML = 'number of items ' + item
         }, false)
-        document.getElementById('list').style.display = 'block'
-        document.getElementById('select').style.display = 'none'
-        document.getElementById('unselect').style.display = 'none'
+
     }
     //event for button all
     var all = document.getElementById('all')
@@ -45,6 +50,13 @@ function onLoadFunct() {
             document.getElementById('list').style.display = 'block'
             document.getElementById('select').style.display = 'none'
             document.getElementById('unselect').style.display = 'none'
+            // number of items
+            var sum = document.getElementById('list').getElementsByTagName('li')
+            var item = 0
+            for (i = 0; i < sum.length; i++) {
+                item += 1
+            }
+            document.getElementById('sum').innerHTML = 'number of items ' + item
         })
 
     }
@@ -74,10 +86,27 @@ function onLoadFunct() {
                         document.getElementById("select").appendChild(el[i])
                     }
                 }
+                //find selected element in select
+                el = document.getElementById('select').getElementsByTagName('li')
+                for (i = 0; i < el.length; i++) {
+                    idLi = el[i].getAttribute('id')
+                    idCheck = "check" + idLi
+                    li = document.getElementById(idCheck)
+                    if (li.checked === false) {
+                        document.getElementById("unselect").appendChild(el[i])
+                    }
+                }
             }, false)
             document.getElementById('select').style.display = 'block'
             document.getElementById('list').style.display = 'none'
             document.getElementById('unselect').style.display = 'none'
+            // number of items
+            var sum = document.getElementById('select').getElementsByTagName('li')
+            var item = 0
+            for (i = 0; i < sum.length; i++) {
+                item += 1
+            }
+            document.getElementById('sum').innerHTML = 'number of checked ' + item
         })
     }
     //event for button unchecked
@@ -96,7 +125,7 @@ function onLoadFunct() {
                         document.getElementById("unselect").appendChild(el[i])
                     }
                 }
-                //find unselected element in unselect
+                //find unselected element in select
                 el = document.getElementById('select').getElementsByTagName('li')
                 for (i = 0; i < el.length; i++) {
                     idLi = el[i].getAttribute('id')
@@ -106,10 +135,27 @@ function onLoadFunct() {
                         document.getElementById("unselect").appendChild(el[i])
                     }
                 }
+                //find unselected element in unselect
+                el = document.getElementById('unselect').getElementsByTagName('li')
+                for (i = 0; i < el.length; i++) {
+                    idLi = el[i].getAttribute('id')
+                    idCheck = "check" + idLi
+                    li = document.getElementById(idCheck)
+                    if (li.checked) {
+                        document.getElementById("select").appendChild(el[i])
+                    }
+                }
             }, false)
             document.getElementById('unselect').style.display = 'block'
             document.getElementById('list').style.display = 'none'
             document.getElementById('select').style.display = 'none'
+            // number of items
+            var sum = document.getElementById('unselect').getElementsByTagName('li')
+            var item = 0
+            for (i = 0; i < sum.length; i++) {
+                item += 1
+            }
+            document.getElementById('sum').innerHTML = 'number of unchecked ' + item
         })
     }
 }
