@@ -19,6 +19,9 @@ function onLoadFunct() {
             //reset input
             document.getElementById("item").value = ""
         }, false)
+        document.getElementById('list').style.display = 'block'
+        document.getElementById('select').style.display = 'none'
+        document.getElementById('unselect').style.display = 'none'
     }
     //event for button all
     var all = document.getElementById('all')
@@ -39,7 +42,11 @@ function onLoadFunct() {
                     document.getElementById("list").appendChild(el[i])
                 }
             }, false)
+            document.getElementById('list').style.display = 'block'
+            document.getElementById('select').style.display = 'none'
+            document.getElementById('unselect').style.display = 'none'
         })
+
     }
     //event for button checked
     var checked = document.getElementById('checked')
@@ -68,6 +75,9 @@ function onLoadFunct() {
                     }
                 }
             }, false)
+            document.getElementById('select').style.display = 'block'
+            document.getElementById('list').style.display = 'none'
+            document.getElementById('unselect').style.display = 'none'
         })
     }
     //event for button unchecked
@@ -97,6 +107,9 @@ function onLoadFunct() {
                     }
                 }
             }, false)
+            document.getElementById('unselect').style.display = 'block'
+            document.getElementById('list').style.display = 'none'
+            document.getElementById('select').style.display = 'none'
         })
     }
 }
