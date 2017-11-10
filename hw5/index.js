@@ -9,10 +9,11 @@ function onLoadFunct() {
             //create item in list
             var el = document.createElement("li")
             el.id = n
+            var del = '<p id="del' + n + '" onclick="Del(' + n + ')">delete</p>'
             //check if input empty -> ignore
             var value = -document.getElementById("item").value
-            if (value !== -0){
-                el.innerHTML = '<input type="checkbox" id="check' + n + '">' + document.getElementById("item").value
+            if (value !== -0) {
+                el.innerHTML = '<input type="checkbox" id="check' + n + '">' + document.getElementById("item").value + del
                 list.insertBefore(el, list.childNodes[0])
             }
             //reset input
@@ -30,7 +31,7 @@ function onLoadFunct() {
                     document.getElementById("list").appendChild(el[i])
                 }
                 el = document.getElementById('unselect').getElementsByTagName('li')
-                for ( i = 0; i < el.length; i++) {
+                for (i = 0; i < el.length; i++) {
                     document.getElementById("list").appendChild(el[i])
                 }
                 el = document.getElementById('list').getElementsByTagName('li')
@@ -98,4 +99,10 @@ function onLoadFunct() {
             }, false)
         })
     }
+}
+
+//delete item
+function Del(id) {
+    var el = document.getElementById(id)
+    el.parentNode.removeChild(el)
 }
