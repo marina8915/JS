@@ -1,7 +1,8 @@
 function perform() {
     return new Promise(function (resolve) {
-        var arg = perform.arguments[1];
-        return resolve(arg(null));
+        var arg1 = perform.arguments[0];
+        var arg2 = perform.arguments[1];
+        return resolve(arg2(arg1));
     });
 }
 
