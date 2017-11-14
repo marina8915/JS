@@ -8,7 +8,6 @@ function perform() {
 
 perform(null, function (value) { // value === null
     var param = 1;
-    console.log(value);
     console.log(param); // 1
     return param;
 })
