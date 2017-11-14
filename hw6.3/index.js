@@ -2,7 +2,7 @@ function perform() {
     return new Promise(function (resolve) {
         var arg = perform.arguments[1];
         return resolve(arg());
-        })
+    });
 }
 
 perform(null, function (value) { // value === null
