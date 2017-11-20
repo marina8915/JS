@@ -3,7 +3,7 @@ function Client(name, second_name, status) {
     var userStatus = status || 'usual'
     var secondName = second_name || 'Anonym'
     var count = 0
-	var allInfo = ''
+    var allInfo = ''
     
     this.name = function () {
         return console.log('Name: ' + userName + ' ' + secondName)
